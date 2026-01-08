@@ -1,0 +1,386 @@
+.text-18 {
+    font-size: 12px;
+}
+
+.cms-hiw-content {
+    width: 160px;
+}
+
+/* .btn-fill.btn-white {
+    background-color: var(--color-white);
+    border-radius: 15px;
+} */
+
+
+button.cky-btn.cky-btn-accept {
+    background-color: #49b777 !important;
+    border-color: #49b777 !important;
+}
+
+button.cky-btn.cky-btn-reject {
+    color: #49b777 !important;
+    border-color: #49b777 !important;
+    background-color: transparent;
+}
+button.cky-btn.cky-btn-preferences{
+ color: #49b777 !important;
+    border-color: #49b777 !important;
+    background-color: transparent;
+
+}
+
+.cky-btn-revisit-wrapper.cky-revisit-bottom-left {
+    background-color: #49b777 !important;
+}
+
+
+button.cky-btn.cky-btn-customize {
+ color: #49b777 !important;
+    border-color: #49b777 !important;
+}
+
+
+.body{
+	margin-top:-1px;
+}
+body.home.page-template-default.page.page-id-126.wls_chrome.translatepress-en_GB.cms-header-sticky.cms-body-font-default.cms-heading-font-default.cms-subheading-font-default.elementor-default.elementor-kit-4530.elementor-page.elementor-page-126.e--ua-blink.e--ua-chrome.e--ua-webkit {
+    margin-top: -2px;
+}
+
+
+.cms-desc.text-17.font-700.pt-20.mt-n3.text-white {
+    font-weight: 400 !important;
+    font-size: 14px !important;
+	
+}
+
+
+.cms-page-title-content-col.col-12.col-tablet-8.col-desktop-6 {
+    margin-top: -60px;
+}
+
+/* span.meta-inner {
+    display: none !important;
+} */
+
+@media (min-width: 1281px)
+.header-sticky .cms-primary-menu > li > a, .header-sticky .cms-primary-menu > li > .main-menu-toggle:before {
+    color: black !important;
+}
+
+.cms-mapadd.text-14.text-body {
+    color: white !important;
+}
+
+.cms-desc.text-17.pt-30.text-body {
+    color: white !important;
+}
+
+@media (min-width: 1024px)
+.pt-tablet-150 {
+    padding-top: 70px;
+}
+
+.cms-star-rated.absolute.text-rating {
+    color: #FFE585 !important;
+}
+
+.cms-page-title-overlay.cms-page-title-gradient.cms-overlay-gradient {
+    background: #161616de;
+}
+
+
+
+.cms-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+
+.large-heading.text-30.text-tablet-40.text-tablet-extra-50.text-desktop-75.lh-1\/13.heading.text-white.cms-animate.animated.fadeInLeft {
+    font-size: 25px;
+}
+	.elementor-126 .elementor-element.elementor-element-3f32a888 .large-heading {
+    font-size: 34px;
+}
+}
+
+
+.cms-item-content.overflow-hidden.cms-overlay.d-flex.align-items-end:hover {
+    background-color: #161616de !important;
+}
+
+img.circle.cms-img {
+    margin-left: -2px;
+    margin-top: -8px;
+    position: absolute;
+}
+/* .col.mt-n7.mb-n7 {
+    margin-left: 75px;
+}
+ */
+button.wpcf7-form-control.wpcf7-submit.btn.btn-fill.btn-xl.btn-primary.text-white.btn-hover-accent.text-hover-white {
+    width: 277px !important;
+}
+h2{
+	color : black;
+}
+
+h2.cms-item-content-title.cms-heading.text-20.lh-1\/45.pt-5.mb-n7 {
+    color: #333333 !important;
+}
+
+span.cms-icon.cmsi-arrow-right {
+    display: none !important;
+}
+
+cms-page-title-overlay.cms-page-title-gradient.cms-overlay-gradient {
+    background: #00000017 !important;
+}
+
+@media (min-width: 1024px)
+.text-tablet-40 {
+    font-size: 40px;
+}
+
+
+
+span.cms-btn-text.text-center {
+    padding-left: 2px !important;
+}
+
+.cms-video-btn.cms-btn.layout-btn.text-center.bg-white.bg-hover-primary.text-primary.text-hover-white.size-168.cms-transition.has-stroke.absolute.cms-abs-t-0.mt-n20.ml-n20 {
+    display: none;
+}
+
+
+/* Slide In From The Top Option */
+
+.header-2 {
+ transform: translatey(-80px);
+ -moz-transition: all .3s ease!important;
+ -webkit-transition: all .3s ease!important;
+ transition: all .3s ease!important;
+ width: 100%!important;
+}
+
+
+.elementor-sticky--effects.header-2  {
+ height: auto!important;
+ transform: translatey(0px);
+}
+
+.elementor-sticky--effects.header-1 {
+ display: none!important;
+}
+
+/* End Of Slide In From The Top Option */
+
+
+.wpcf7-response-output {
+    display: none !important;
+}
+
+/* Fade In Option */
+
+.header-2 {
+ opacity: 0;
+ -moz-transition: opacity .25s ease-out!important;
+  -webkit-transition: opacity .25s ease-out!important;
+  transition: opacity .25s ease-out!important;
+}
+
+
+.elementor-sticky--effects.header-2  {
+ opacity: 1!important;
+}
+
+/* End Of Fade In Option */
+
+
+
+
+
+@media (min-width: 1281px)
+.pr-desktop-40 {
+    padding-right: 1px !important;
+	
+	
+}
+
+
+.elementor-6217 .elementor-element.elementor-element-c5a3383 {
+    --display: flex;
+    --flex-direction: column;
+    --container-widget-width: 100%;
+    --container-widget-height: initial;
+    --container-widget-flex-grow: 0;
+    --container-widget-align-self: initial;
+    --background-transition: 0.3s;
+    display: none !important;
+}
+
+
+.elementor.elementor-6217 {
+    margin-top: -74px !important;
+}
+
+
+span.cms-post-date.cms-media-meta.absolute.cms-abs-t-0.bg-lighten-primary.text-white.text-uppercase.font-heading.p-lr-10.text-center.pb-10 {
+    DISPLAY: NONE !IMPORTANT;
+}
+
+
+.col.mt-n7.mb-n7 {		     margin-left: 0px;
+}
+
+.cms-image.relative {		     display: none;
+}
+
+.col.mt-n7.mb-n7 {		     margin-left: 0px;
+}
+
+.cms-image.relative {		     display: none !important;
+}
+
+img.default-thumb.circle.cms-img {
+    display: none !important;
+}
+
+
+
+.btn-fill.btn-primary {
+    background-color: var(--color-primary);
+    border-radius: 10px !important;
+}
+
+span.cms-btn-text.text-center {
+    font-size: 16px;
+}
+
+
+.btn-lg {
+    padding: 19.5px 40px;
+    border-radius: 10px;
+}
+
+.cms-swiper-slide:hover{
+	  color: #333;
+    background-color: #fff !important;
+}
+}
+
+
+.cms-page-title-overlay.cms-page-title-gradient.cms-overlay-gradient {
+    background: #16161652 !important;
+}
+
+
+ul#cms-primary-menu {
+    margin-right: 10px;
+}
+
+
+ul#cms-primary-menu {
+    margin-right: 10px;
+}
+a.cms-post--author.text-primary.text-hover-accent {
+    display: none !important;
+}
+span.cms-meta-separator.align-self-center {
+    display: none !important;
+}
+
+.cms-media-gradient-1:after {
+    opacity: 1%;
+    background: -webkit-linear-gradient(bottom, #45b87700 0%, rgba(34, 34, 34, 0) 94%);
+    background: -o-linear-gradient(bottom, var(--color-primary) 0%, rgba(34, 34, 34, 0) 94%);
+    background: -ms-linear-gradient(bottom, #45b8770a 0%, rgba(34, 34, 34, 0) 94%);
+    background: -moz-linear-gradient(bottom, var(--color-primary) 0%, rgba(34, 34, 34, 0) 94%);
+    background: linear-gradient(to top, #45b87700 0%, rgba(34, 34, 34, 0) 94%);
+}
+.cms-star-rating.relative {
+    display: none !important;
+}
+
+.cms-page-title-content-col.col-12.col-tablet-8.col-desktop-6 {
+    margin-top: -30px;
+}
+
+@media only screen and (max-width: 600px) {
+  span.cms-counter-number {
+    font-size: 50px;
+}
+span.cms-counter-number-suffix.empty-none {
+    font-size: 34px;
+}
+}
+
+.cms-form-desc.mb-25.text-body {
+    padding-bottom: 16px;
+	  font-size: 16px;
+}
+
+span.label-inner {
+    font-size: 16px;
+}
+
+span.wpcf7-form-control-wrap {
+    padding-top: 8px;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  h2.elementor-heading-title.elementor-size-default {
+    font-size: 28px !important;
+}
+	p {
+    font-size: 16px;
+}
+	
+	li.elementor-icon-list-item {
+    font-size: 16px !important;
+}
+
+	span.wpcf7-list-item-label {
+    font-size: 16px;
+}
+
+}
+
+.elementor-126 .elementor-element.elementor-element-3f32a888 .elementor-repeater-item-c95696b.cms-slider-content-text {
+    flex: 0 0 769px;
+    max-width: 769px;
+    margin-top: 10px;
+}
+
+.cms-slider-overlay-2 .cms-slide-img-overlay {
+    background: rgb(27 26 26 / 40%);
+}
+
+div#cms-page {
+    margin-top: -2px;
+}
+a.btn.btn-fill.btn-white.text-primary.btn-hover-fill.btn-hover-accent.text-hover-white.btn-md.w-mobile-auto.w-extra-mobile-auto.w-tablet-auto.w-tablet-extra-100.w-laptop-100.w-widescreen-auto.btn-no-icon.\31 .cms-animate.animated.none {
+    border-radius: 10px !important;
+}
+
+a.h-btn.btn.btn-fill.btn-hover-fill.btn-white.btn-hover-accent.text-primary.text-hover-white {
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+ .cms-header-btn.cms-header-btn1.col-auto.cms-hidden-desktop.pb-15.pb-desktop-25 {
+    display: none;
+}
+}
+.cms-page-title-overlay.cms-page-title-gradient.cms-overlay-gradient {
+    background: #16161638 !important ;
+}
+
+input#form-field-message {
+    border: 1px solid !important;
+}
