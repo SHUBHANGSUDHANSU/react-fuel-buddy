@@ -15,7 +15,6 @@ import TermsConditions from './pages/TermsConditions.jsx'
 import SimplePage from './pages/SimplePage.jsx'
 import OrderFuel from './pages/OrderFuel.jsx'
 import PageShell from './components/PageShell.jsx'
-import './App.css'
 
 export default function App() {
   return (
