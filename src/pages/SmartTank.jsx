@@ -1,4 +1,34 @@
+import { useState } from "react";
+
 export default function SmartTank() {
+  const [formStatus, setFormStatus] = useState({});
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formKey = form.getAttribute("data-form-key") || "default";
+
+    setFormStatus((prev) => ({ ...prev, [formKey]: "loading" }));
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        form.reset();
+        setFormStatus((prev) => ({ ...prev, [formKey]: "success" }));
+      } else {
+        setFormStatus((prev) => ({ ...prev, [formKey]: "error" }));
+      }
+    } catch (error) {
+      setFormStatus((prev) => ({ ...prev, [formKey]: "error" }));
+    }
+  };
   return (
     <>
     <div id="cms-page" className="cms-page">
@@ -261,7 +291,8 @@ export default function SmartTank() {
                                 <p role="status" aria-live="polite" aria-atomic="true"></p>
                                 <ul></ul>
                               </div>
-                              <form action="/solutions/smart-tank/#wpcf7-f1514-p676-o1" method="post" className="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+                              <form action="https://formspree.io/f/xkoowlbe" method="post" className="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init" data-form-key="smart-tank" onSubmit={handleSubmit}>
+                                <input type="hidden" name="form_source" value="Smart Tank - Quote Form" />
                                 <div style={{display: "none"}}>
                                   <input type="hidden" name="_wpcf7" value="1514" />
                                   <input type="hidden" name="_wpcf7_version" value="5.9.3" />
@@ -348,15 +379,30 @@ export default function SmartTank() {
                                   </div>
                                   <div className="col-12 col-tablet-auto pt-15">
                                     <p>
-                                      <div className="cms-submit">
-                                        <button className="wpcf7-form-control wpcf7-submit btn btn-fill btn-xl btn-primary text-white btn-hover-accent text-hover-white" type="submit">
-                                          <span className="cms-btn-content justify-content-center">
-                                            <span className="cms-btn-text">
-                                              Submit Request
-                                            </span>
+                                    <div className="cms-submit">
+                                      <button className="wpcf7-form-control wpcf7-submit btn btn-fill btn-xl btn-primary text-white btn-hover-accent text-hover-white" type="submit">
+                                        <span className="cms-btn-content justify-content-center">
+                                          <span className="cms-btn-text">
+                                            Submit Request
                                           </span>
-                                        </button>
+                                        </span>
+                                      </button>
+                                    </div>
+                                    {formStatus["smart-tank"] === "loading" && (
+                                      <div style={{ marginTop: 12 }}>
+                                        Sending...
                                       </div>
+                                    )}
+                                    {formStatus["smart-tank"] === "success" && (
+                                      <div style={{ color: "#1a7f37", marginTop: 12 }}>
+                                        Thank you! We will get back to you soon.
+                                      </div>
+                                    )}
+                                    {formStatus["smart-tank"] === "error" && (
+                                      <div style={{ color: "#c0392b", marginTop: 12 }}>
+                                        Sorry, something went wrong. Please try again.
+                                      </div>
+                                    )}
                                     </p>
                                   </div>
                                 </div>
