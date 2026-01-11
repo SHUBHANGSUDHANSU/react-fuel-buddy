@@ -1,4 +1,35 @@
+import { useState } from "react";
+
 export default function BuddyCan() {
+  const [formStatus, setFormStatus] = useState({});
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formKey = form.getAttribute("data-form-key") || "default";
+
+    setFormStatus((prev) => ({ ...prev, [formKey]: "loading" }));
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        form.reset();
+        setFormStatus((prev) => ({ ...prev, [formKey]: "success" }));
+      } else {
+        setFormStatus((prev) => ({ ...prev, [formKey]: "error" }));
+      }
+    } catch (error) {
+      setFormStatus((prev) => ({ ...prev, [formKey]: "error" }));
+    }
+  };
+
   return (
     <>
     <div id="cms-page" className="cms-page">
@@ -438,14 +469,15 @@ export default function BuddyCan() {
                                 <p role="status" aria-live="polite" aria-atomic="true"></p>
                                 <ul></ul>
                               </div>
-                              <form action="/solutions/buddy-can/#wpcf7-f1514-p674-o1" method="post" className="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+                              <form action="https://formspree.io/f/xkoowlbe" method="post" className="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init" data-form-key="buddy-can-quote" onSubmit={handleSubmit}>
+                                <input type="hidden" name="form_source" value="Buddy Can - Quote Form" />
                                 <div style={{display: "none"}}>
                                   <input type="hidden" name="_wpcf7" value="1514" />
                                   <input type="hidden" name="_wpcf7_version" value="5.9.3" />
                                   <input type="hidden" name="_wpcf7_locale" value="en_US" />
                                   <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f1514-p674-o1" />
                                   <input type="hidden" name="_wpcf7_container_post" value="674" />
-                                  <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+                                  <input type="hidden" name="_wpcf7_posted_data_hash" />
                                 </div>
                                 <div className="row gutters-30">
                                   <div className="col-12 col-tablet-6 pb-20">
@@ -455,7 +487,7 @@ export default function BuddyCan() {
                                           First Name*
                                         </span>
                                         <span className="wpcf7-form-control-wrap" data-name="first_name">
-                                          <input size="40" className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="First Name" value="" type="text" name="first_name" />
+                                          <input size="40" className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="First Name" type="text" name="first_name" />
                                         </span>
                                       </label>
                                     </p>
@@ -467,7 +499,7 @@ export default function BuddyCan() {
                                           Last Name*
                                         </span>
                                         <span className="wpcf7-form-control-wrap" data-name="last_name">
-                                          <input size="40" className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Last Name" value="" type="text" name="last_name" />
+                                          <input size="40" className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Last Name" type="text" name="last_name" />
                                         </span>
                                       </label>
                                     </p>
@@ -479,7 +511,7 @@ export default function BuddyCan() {
                                           Email Address*
                                         </span>
                                         <span className="wpcf7-form-control-wrap" data-name="email">
-                                          <input size="40" className="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email Address" value="" type="email" name="email" />
+                                          <input size="40" className="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email Address" type="email" name="email" />
                                         </span>
                                       </label>
                                     </p>
@@ -491,7 +523,7 @@ export default function BuddyCan() {
                                           Phone Number*
                                         </span>
                                         <span className="wpcf7-form-control-wrap" data-name="mobile_number">
-                                          <input size="40" className="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="+91XXXXXXXXXX" value="" type="tel" name="mobile_number" />
+                                          <input size="40" className="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="+91XXXXXXXXXX" type="tel" name="mobile_number" />
                                         </span>
                                       </label>
                                     </p>
@@ -534,6 +566,21 @@ export default function BuddyCan() {
                                           </span>
                                         </button>
                                       </div>
+                                      {formStatus["buddy-can-quote"] === "loading" && (
+                                        <div style={{ marginTop: 12 }}>
+                                          Sending...
+                                        </div>
+                                      )}
+                                      {formStatus["buddy-can-quote"] === "success" && (
+                                        <div style={{ color: "#1a7f37", marginTop: 12 }}>
+                                          Thank you! We will get back to you soon.
+                                        </div>
+                                      )}
+                                      {formStatus["buddy-can-quote"] === "error" && (
+                                        <div style={{ color: "#c0392b", marginTop: 12 }}>
+                                          Sorry, something went wrong. Please try again.
+                                        </div>
+                                      )}
                                     </p>
                                   </div>
                                 </div>
@@ -576,14 +623,15 @@ export default function BuddyCan() {
                             <p role="status" aria-live="polite" aria-atomic="true"></p>
                             <ul></ul>
                           </div>
-                          <form action="/solutions/buddy-can/#wpcf7-f1514-p674-o2" method="post" className="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+                          <form action="https://formspree.io/f/xkoowlbe" method="post" className="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init" data-form-key="buddy-can-partner" onSubmit={handleSubmit}>
+                            <input type="hidden" name="form_source" value="Buddy Can - Become a Partner" />
                             <div style={{display: "none"}}>
                               <input type="hidden" name="_wpcf7" value="1514" />
                               <input type="hidden" name="_wpcf7_version" value="5.9.3" />
                               <input type="hidden" name="_wpcf7_locale" value="en_US" />
                               <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f1514-p674-o2" />
                               <input type="hidden" name="_wpcf7_container_post" value="674" />
-                              <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+                              <input type="hidden" name="_wpcf7_posted_data_hash" />
                             </div>
                             <div className="row gutters-30">
                               <div className="col-12 col-tablet-6 pb-20">
@@ -593,7 +641,7 @@ export default function BuddyCan() {
                                       First Name*
                                     </span>
                                     <span className="wpcf7-form-control-wrap" data-name="first_name">
-                                      <input size="40" className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="First Name" value="" type="text" name="first_name" />
+                                      <input size="40" className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="First Name" type="text" name="first_name" />
                                     </span>
                                   </label>
                                 </p>
@@ -605,7 +653,7 @@ export default function BuddyCan() {
                                       Last Name*
                                     </span>
                                     <span className="wpcf7-form-control-wrap" data-name="last_name">
-                                      <input size="40" className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Last Name" value="" type="text" name="last_name" />
+                                      <input size="40" className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Last Name" type="text" name="last_name" />
                                     </span>
                                   </label>
                                 </p>
@@ -617,7 +665,7 @@ export default function BuddyCan() {
                                       Email Address*
                                     </span>
                                     <span className="wpcf7-form-control-wrap" data-name="email">
-                                      <input size="40" className="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email Address" value="" type="email" name="email" />
+                                      <input size="40" className="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email Address" type="email" name="email" />
                                     </span>
                                   </label>
                                 </p>
@@ -629,7 +677,7 @@ export default function BuddyCan() {
                                       Phone Number*
                                     </span>
                                     <span className="wpcf7-form-control-wrap" data-name="mobile_number">
-                                      <input size="40" className="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="+91XXXXXXXXXX" value="" type="tel" name="mobile_number" />
+                                      <input size="40" className="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="+91XXXXXXXXXX" type="tel" name="mobile_number" />
                                     </span>
                                   </label>
                                 </p>
@@ -663,15 +711,30 @@ export default function BuddyCan() {
                               </div>
                               <div className="col-12 col-tablet-auto pt-15">
                                 <p>
-                                  <div className="cms-submit">
-                                    <button className="wpcf7-form-control wpcf7-submit btn btn-fill btn-xl btn-primary text-white btn-hover-accent text-hover-white" type="submit">
-                                      <span className="cms-btn-content justify-content-center">
-                                        <span className="cms-btn-text">
-                                          Submit Request
-                                        </span>
-                                      </span>
-                                    </button>
-                                  </div>
+                                      <div className="cms-submit">
+                                        <button className="wpcf7-form-control wpcf7-submit btn btn-fill btn-xl btn-primary text-white btn-hover-accent text-hover-white" type="submit">
+                                          <span className="cms-btn-content justify-content-center">
+                                            <span className="cms-btn-text">
+                                              Submit Request
+                                            </span>
+                                          </span>
+                                        </button>
+                                      </div>
+                                      {formStatus["buddy-can-partner"] === "loading" && (
+                                        <div style={{ marginTop: 12 }}>
+                                          Sending...
+                                        </div>
+                                      )}
+                                      {formStatus["buddy-can-partner"] === "success" && (
+                                        <div style={{ color: "#1a7f37", marginTop: 12 }}>
+                                          Thank you! We will get back to you soon.
+                                        </div>
+                                      )}
+                                      {formStatus["buddy-can-partner"] === "error" && (
+                                        <div style={{ color: "#c0392b", marginTop: 12 }}>
+                                          Sorry, something went wrong. Please try again.
+                                        </div>
+                                      )}
                                 </p>
                               </div>
                             </div>
@@ -1049,7 +1112,7 @@ export default function BuddyCan() {
       </div>
       <div className="cms-search-popup-inner cms-modal-inner container">
         <form role="search" method="get" className="cms-search-form cms-search-form-popup" action="https://www.fuelbuddy.in/">
-          <input type="search" className="cms-search-field" placeholder="Type Words Then Enter" value="" name="s" />
+          <input type="search" className="cms-search-field" placeholder="Type Words Then Enter" name="s" />
           <button type="submit" className="cms-search-submit" value="Search"></button>
         </form>
       </div>

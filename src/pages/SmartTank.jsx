@@ -268,7 +268,7 @@ export default function SmartTank() {
                                   <input type="hidden" name="_wpcf7_locale" value="en_US" />
                                   <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f1514-p676-o1" />
                                   <input type="hidden" name="_wpcf7_container_post" value="676" />
-                                  <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+                                  <input type="hidden" name="_wpcf7_posted_data_hash" />
                                 </div>
                                 <div className="row gutters-30">
                                   <div className="col-12 col-tablet-6 pb-20">
@@ -278,7 +278,7 @@ export default function SmartTank() {
                                           First Name*
                                         </span>
                                         <span className="wpcf7-form-control-wrap" data-name="first_name">
-                                          <input size="40" className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="First Name" value="" type="text" name="first_name" />
+                                          <input size="40" className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="First Name" type="text" name="first_name" />
                                         </span>
                                       </label>
                                     </p>
@@ -290,7 +290,7 @@ export default function SmartTank() {
                                           Last Name*
                                         </span>
                                         <span className="wpcf7-form-control-wrap" data-name="last_name">
-                                          <input size="40" className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Last Name" value="" type="text" name="last_name" />
+                                          <input size="40" className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Last Name" type="text" name="last_name" />
                                         </span>
                                       </label>
                                     </p>
@@ -302,7 +302,7 @@ export default function SmartTank() {
                                           Email Address*
                                         </span>
                                         <span className="wpcf7-form-control-wrap" data-name="email">
-                                          <input size="40" className="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email Address" value="" type="email" name="email" />
+                                          <input size="40" className="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email Address" type="email" name="email" />
                                         </span>
                                       </label>
                                     </p>
@@ -314,7 +314,7 @@ export default function SmartTank() {
                                           Phone Number*
                                         </span>
                                         <span className="wpcf7-form-control-wrap" data-name="mobile_number">
-                                          <input size="40" className="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="+91XXXXXXXXXX" value="" type="tel" name="mobile_number" />
+                                          <input size="40" className="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="+91XXXXXXXXXX" type="tel" name="mobile_number" />
                                         </span>
                                       </label>
                                     </p>
@@ -997,7 +997,7 @@ export default function SmartTank() {
       </div>
       <div className="cms-search-popup-inner cms-modal-inner container">
         <form role="search" method="get" className="cms-search-form cms-search-form-popup" action="https://www.fuelbuddy.in/">
-          <input type="search" className="cms-search-field" placeholder="Type Words Then Enter" value="" name="s" />
+          <input type="search" className="cms-search-field" placeholder="Type Words Then Enter" name="s" />
           <button type="submit" className="cms-search-submit" value="Search"></button>
         </form>
       </div>
