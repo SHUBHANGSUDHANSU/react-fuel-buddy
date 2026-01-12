@@ -1,16 +1,77 @@
-# React + Vite
+# React Fuel Buddy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + Vite clone of the FuelBuddy marketing website, rebuilt as a single-page app with local routes and static assets.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Client-side routing for all public pages
+- Local assets in `public/` and `src/assets/`
+- Formspree integration for contact/quote forms
+- Vercel-ready SPA deployment
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- React Router
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Open `http://localhost:5173/`.
+
+## Build
+
+```bash
+npm run build
+npm run preview
+```
+
+## Routes
+
+Main routes are defined in `src/App.jsx`, including:
+
+- `/`
+- `/about-us`
+- `/leadership-team`
+- `/careers`
+- `/solutions/buddy-can`
+- `/solutions/smart-tank`
+- `/solutions/diesel-on-tap`
+- `/solutions/fb-vault`
+- `/our-blog`
+- `/awards-recognition`
+- `/contact-us`
+- `/privacy-policy`
+- `/terms-conditions`
+- `/order-fuel`
+
+## Forms
+
+Forms submit via Formspree to `https://formspree.io/f/xkoowlbe`.
+Pages wired:
+
+- Contact Us
+- About Us
+- Buddy Can
+- Smart Tank
+- DOT (Diesel on Tap)
+- FB Vault
+
+## Deployment (Vercel)
+
+The project includes `vercel.json` to rewrite all routes to `/` for SPA routing.
+
+1. Push to GitHub.
+2. Import the repo in Vercel.
+3. Framework preset: Vite.
+4. Build command: `npm run build`
+5. Output directory: `dist`
+
+## Notes
+
+If you add new routes, keep them in `src/App.jsx` and ensure Vercel rewrites remain in place.
